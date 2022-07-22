@@ -64,22 +64,22 @@ void analysis::Loop()
 	  } 
 	}
 	
-	//	std::unique_ptr<TFile> myFile(TFile::Open("output.root", "RECREATE")); // archivo donde se guardaran histogramas
+		std::unique_ptr<TFile> myFile(TFile::Open("output.root", "RECREATE")); // archivo donde se guardaran histogramas
 
 	
-		//	hpth->Write();
-		//	hMx->Write();
-		//	for(int a=0; a< 14; a++){
-		//	  for(int b=0; b< 12; b++){
-		//    hhMx[a][b]->Write(); 
-		//	  }
-		//	}
+		hpth->Write();
+		hMx->Write();
+		for(int a=0; a< 14; a++){
+			for(int b=0; b< 12; b++){
+				hhMx[a][b]->Write(); 
+			  }
+			}
 
 
 	// En esta parte intent[e hacer el fit, pero me produce un error de fit data is empty. 	En la consola pude hacer los fits con ->Fit("f1","R")
 		
-	   TF1 *f1 = new TF1("f1", "gaus(0)");
-	   TF1 *f2 = new TF1("f2", "f1  + pol2(3)");
+	  // TF1 *f1 = new TF1("f1", "gaus(0)");
+	   //TF1 *f2 = new TF1("f2", "f1  + pol2(3)");
 	   //   TF1 *f3 = new TF1("f3", "f1 + f2");
 
     
